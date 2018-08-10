@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "odm",
+    "icon":"screen/assets/odm.png",
+    "version": "1.0.0",
+    "slug": "our-daily-manna",
+    "sdkVersion": "27.0.0",
+    "ios": {
+      "bundleIdentifier": "com.yourcompany.odm"
+    },
+    "android": {
+      "package": "com.yourcompany.odm"
+    }
+   }
+ }
+
