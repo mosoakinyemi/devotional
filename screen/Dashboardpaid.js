@@ -26,8 +26,8 @@ export default class Dashboard extends Component {
  
   }
   _registerin(){  
-
- Alert.alert('Hey there!','it seems there is not current live stream at this time. Check back later, Thanks.');
+ this.props.navigation.navigate('stream');
+ // Alert.alert('Hey there!','it seems there is not current live stream at this time. Check back later, Thanks.');
 
     }
        

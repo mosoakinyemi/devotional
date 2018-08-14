@@ -105,11 +105,11 @@ const styles = StyleSheet.create({
       },
       navigate:{
       
-        marginTop:70,
+        marginTop:15,
         marginLeft:30,
      },
      header:{
-         flex:1,
+         flex:2,
          backgroundColor:'brown',
 
         },
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
         fontSize:20,
         color:'white',
         marginBottom:15,
-        marginTop:15,
+        marginTop:5,
         alignSelf:'center'
     },
     subtitle:{

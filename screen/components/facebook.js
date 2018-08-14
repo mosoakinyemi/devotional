@@ -11,16 +11,16 @@ export default class Dashboardicon extends Component {
     
   render() {  
     return (
-            <Image style={styles.btn} source={require('../assets/odm.png')}/>
+            <Image style={styles.btn} source={require('../assets/facebook.png')}/>
     );
   }
 }
 
 const styles = StyleSheet.create({
-    btn:{
+  btn:{
       
-      width:150,
-      height:150,
+      width:30,
+      height:30,
       alignSelf:'center'
     
 

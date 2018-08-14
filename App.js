@@ -7,6 +7,7 @@ import { createStackNavigator } from 'react-navigation';
 
  // Get started page
  import Getstarted from './screen/Getstarted';
+
  import alert from './screen/Error';
  import alertsuccess from './screen/alertsuccess';
  
@@ -162,7 +163,7 @@ const RootStack = createStackNavigator(
   },
     
   {
-    initialRouteName: 'Signin',
+    initialRouteName: 'Getstarted',
   }
 );
 

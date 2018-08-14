@@ -25,7 +25,7 @@ export default class Issue extends Component {
       <View style={styles.container}>
                      <ImageBackground style={styles.header}  >
                                 <TouchableOpacity style={styles.navigate}
-                                 >
+                                 onPress={() => goBack()}>
                                     <Icon active name='md-arrow-back' style={styles.icon} />
                                 </TouchableOpacity>
                                 <Text style={styles.title} > 

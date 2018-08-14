@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {  View,Text, StyleSheet,Image,TouchableOpacity  } from 'react-native';
 
 
-export default class Dashboardicon extends Component {
+export default class logo extends Component {
      
     constructor(props) {
         super(props);
@@ -19,11 +19,10 @@ export default class Dashboardicon extends Component {
 const styles = StyleSheet.create({
     btn:{
       
-      width:150,
-      height:150,
-      alignSelf:'center'
-    
-
+  width:120,
+  height:120,
+  alignSelf:'center',
+  
     }
 });
 

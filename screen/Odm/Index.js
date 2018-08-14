@@ -76,11 +76,11 @@ const styles = StyleSheet.create({
     },
     navigate:{
     
-      marginTop:50,
+      marginTop:40,
       marginLeft:30,
    },
    header:{
-       flex:2,
+       flex:3,
        backgroundColor:'brown',
 
       },
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
   },
   title:{
       marginLeft:30,
-      fontSize:40,
+      fontSize:20,
       color:'white',
       marginBottom:25,
       marginTop:10,
