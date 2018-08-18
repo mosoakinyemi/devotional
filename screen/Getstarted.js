@@ -27,7 +27,7 @@ export default class Signin extends Component {
 
     return (
      
-         <ImageBackground style={{flex: 1, padding: 20,justifyContent:'center',alignContent:'center'}} source={require('./assets/bgcover.png')} >
+         <ImageBackground style={{flex: 1, padding: 20,justifyContent:'center',alignContent:'center'}} source={require('./assets/bgcover.jpg')} >
      
     
             <TouchableOpacity style={styles.navigate}

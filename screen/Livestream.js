@@ -1,177 +1,117 @@
 import React, { Component } from 'react';
-import { Text,  ActivityIndicator, View, StyleSheet,Image,ImageBackground,TouchableHighlight,TouchableOpacity,ScrollView ,FlatList } from 'react-native';
- import { Input, Item, Picker,Icon } from 'native-base';
-   import { Dropdown } from 'react-native-material-dropdown';
-// import {Tts} from 'react-native-tts';
-  
-export default class Bankdetails extends Component {
-  
+import { Container,Button, Icon,Title, Header, Content, Tab, Tabs,Item,Label,Input } from 'native-base';
+import { ActivityIndicator,StyleSheet, TouchableOpacity,Text, View,ScrollView ,FlatList,Alert} from 'react-native';
+ 
+
   
 
-constructor(props){
-    super(props);
-    this.state ={
-     isLoading: false,
-     msg:'',
-     month:'',
-     year:'',
-      }
 
-  }
-_registerin(){
+export default class Homesend extends Component {
 
-}
-   
- // _registerin(year) {
- //      // this.props.navigation.navigate('Dashboardindexpaid');
- //       this.setState({
-                  
- //                          isLoading: true,
-                        
- //                        }); 
- //        return fetch('https://ourdailydevotional.herokuapp.com/find/up/'+year)
- //      .then((response) => response.json())
- //      .then((responseJson) => {
- //             if(responseJson == '0'){
- //                  this.setState({
-          
- //                    msg:'not data found',
- //                    isLoading: false,
- //                   });
- //                 }
- //                 else{
- //                       this.setState({
- //                               dataSource: responseJson,
- //                               msg:'',
- //                                isLoading: false,
- //                               }, function(){
 
- //                           });
- //                  }
 
+constructor(props) {
+      super(props);
+        this.state = {
+        
        
- //      })
- //      .catch((error) =>{
- //        console.error(error);
- //      });
-      
-  
- 
- //  }
- 
-  render() {
-   
-  const { goBack } = this.props.navigation;
-  
-      if(this.state.isLoading){
-      return(
-        <View style={{flex: 1, padding: 20}}>
-          <ActivityIndicator/>
-        </View>
-      )
+      }
     }
-    
-    return (
 
-      <View  style={styles.container}>
-         <View style={styles.header}>
+
+    
+    componentDidMount(){
+    return fetch('http://ourdailydevotional.herokuapp.com/livestream/get/all/')
+      .then((response) => response.json())
+      .then((responseJson) => {
+
+        this.setState({
+          isLoading: false,
+          dataSource: responseJson,
+        }, function(){
+
+        });
+
+      })
+      .catch((error) =>{
+        console.error(error);
+      });
+  }
+    
+    reg(date){
+        this.props.navigation.navigate('web', {
+                        datenow: date,
+                      });
+
+
+    }
+  render() {  
+ 
+   const { goBack } = this.props.navigation;  
+     
+    return (
+      <View style={styles.container}>
+                     <View style={styles.header}>
                                    <TouchableOpacity style={styles.navigate}
                                 onPress={() => goBack()}>
                                     <Icon active name='md-arrow-back' style={styles.icon} />
                                 </TouchableOpacity>
                                 <Text style={styles.title} > 
-                                  LIVESTREAM
+                                  AUDIO BOOK
                                 </Text>
                                 
                         </View>
-           <View style={{ flex:8, flexDirection:'column',justifyContent:'flex-start',  }}>
-                 <Button style={styles.button}
-                    onPress={()=> this._registerin()} >
-                        <Text style={styles.whiteloan} >Live Stream</Text>
-                    </Button>
-          </View>
+                       
 
+             <View style={{flex:7,}} >
+
+  <ScrollView>
+
+                     <FlatList
+                      data={this.state.dataSource}
+                      renderItem={({item}) =>  <View style={{ borderBottomColor: '#666',
+                                    borderColor:'transparent',
+                                    borderWidth: 1,}}>
+                                        <Text 
+                                          onPress={()=>this.reg(`${item.subtitle}`)}
+                                        style={{color:'#666',fontWeight:'700',fontSize:20,marginBottom:10,}}>
+                                       {item.title}
+                                       </Text>
+                                             <View style={{flexDirection:'row',paddingBottom:25}} >
+                                                 <Text
+                                                 onPress={()=>this.reg(`${item.subtitle}`)}
+
+                                                  style={{color:'#999',fontWeight:'700',fontSize:16}}>
+                                                      {item.subtitle}
+                                                  </Text>
+                                             </View>
+                                  </View>}
+                      keyExtractor={(item, index) => index}
+                    />
+                       
+              </ScrollView>
+
+                              
+
+
+             </View>
+                   
+                        
+    
     </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-    container:{
-      flex: 1,
-      width: null,
-      height: null,
-    },
-    icon:{
-      color:'white',
-      },
-      navigate:{
-        flex:1,
-        marginTop:80,
-        marginLeft:30,
-     },
-     contentid:{
-      flex:7,
-      marginLeft:50,
-      marginRight:50,
-       },
-       title:{
-        fontSize:35,
-        color:'white',
-        fontWeight:'900',
-      },
-      titlesub:{
-        fontSize:12,
-        color:'white',
-        fontWeight:'200',
-        letterSpacing:1,
-        marginTop:25,
-        marginBottom:35,
-      },
-      white:{
-        color:'white',
-      },
-      hold: {
-        flexDirection: 'row',
-        marginTop:35,
-        },
-      inner: {
-        width: 50,
-        height: 50,
-        justifyContent: 'center',
-        flex:1,
-      },
-        inner1: {
-        flex:1,
-        width: 50,
-        height: 50,
-      },
-      checkbox:{
-        alignItems: 'flex-end',
-      },
-    footer:{
-      flex:1,
-      marginLeft:50,
-      marginRight:50,
-      borderTopColor: 'white',
-      borderColor:'transparent',
-      borderWidth: 1,
-    },
-    itemorange:{
-      borderColor:'#d66c04',
+  container:{
+    flex: 1,
+    backgroundColor:'#f5f5f5',
   },
-  whiteitems:{
+  icon:{
     color:'white',
- 
-},
-  title:{
-      marginLeft:30,
-      fontSize:20,
-      color:'white',
-      marginBottom:25,
-      marginTop:10,
-  },
-   navigate:{
+    },
+    navigate:{
     
       marginTop:40,
       marginLeft:30,
@@ -181,7 +121,21 @@ const styles = StyleSheet.create({
        backgroundColor:'brown',
 
       },
-
+   body:{
+      flex:3,
+  },
+  title:{
+      marginLeft:30,
+      fontSize:20,
+      color:'white',
+      marginBottom:25,
+      marginTop:10,
+  },
+      white:{
+          color:'#c2cbd0',
+          fontWeight:'500'
+      },
+ 
 });
 
 

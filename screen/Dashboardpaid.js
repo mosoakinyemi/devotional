@@ -50,11 +50,11 @@ export default class Dashboard extends Component {
                         Welcome back to ODM. 
                         
                     </Text>
-                    <Text style={styles.yippytextsub}>Check Live Stream</Text>
+                    <Text style={styles.yippytextsub}>tune in now</Text>
            
                     <Button style={styles.button}
                     onPress={()=> this._registerin()} >
-                        <Text style={styles.whiteloan} >Live Stream</Text>
+                        <Text style={styles.whiteloan} >Audio book</Text>
                     </Button>
 
                 
@@ -74,10 +74,7 @@ export default class Dashboard extends Component {
                             <Text onPress={()=> this.props.navigation.navigate('p')} style={styles.ash}> <Icon name="ios-bookmark" style={{color:'brown',}} />  Unfailling Promise </Text>
                              
                     </View>
-                        <View style={styles.recenttransaction1}>
-                            <Text style={styles.ash}> <Icon name="ios-bookmark" style={{color:'brown',}} />  Audio Tracks </Text>
-                             
-                    </View>
+                        
                         <View style={styles.recenttransaction1}>
                             <Text onPress={()=> this.props.navigation.navigate('Prayers')} style={styles.ash}> <Icon name="ios-bookmark" style={{color:'brown',}} />  Prayers </Text>
                              

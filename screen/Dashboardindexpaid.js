@@ -25,6 +25,7 @@ import pmessage from './promise/History';
 import messagep from './promise/message';
 
 import stream from './Livestream';
+import web from './web';
 
 
 const RootStack = createStackNavigator({
@@ -87,6 +88,11 @@ messagep: { screen: messagep,
           },
 
 stream: { screen: stream,
+         navigationOptions: {
+                header: null, 
+             },
+          },
+web: { screen: web,
          navigationOptions: {
                 header: null, 
              },

@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
       color:'white',
       marginBottom:25,
       marginTop:10,
+      fontWeight:'700',
   },
       white:{
           color:'#c2cbd0',
