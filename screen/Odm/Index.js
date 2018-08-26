@@ -61,11 +61,11 @@ constructor(props) {
 
 
              <WebView
-            source={{uri: 'http://ourdailydevotional.herokuapp.com/livestream/latest/today/english/ssss'}}
+            source={{uri: 'http://ourdailydevotional.herokuapp.com/livestream/latest/today/english/'}}
             style={styles.body}
           />
 
-             </View>ssss
+             </View>
                    
                         
     
