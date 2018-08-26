@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container,Button, Icon,Title, Header, Content, Tab, Tabs,Item,Label,Input } from 'native-base';
-import { ActivityIndicator,StyleSheet, TouchableOpacity,Text, View} from 'react-native';
+import { ActivityIndicator,StyleSheet, TouchableOpacity,Text, View,WebView} from 'react-native';
 
 import Tab2 from './Send'; 
 import Tab3 from './History';
@@ -57,7 +57,15 @@ constructor(props) {
 
              <View style={{flex:8,}} >
 
-             </View>
+
+
+
+             <WebView
+            source={{uri: 'http://ourdailydevotional.herokuapp.com/livestream/latest/today/english/ssss'}}
+            style={styles.body}
+          />
+
+             </View>ssss
                    
                         
     

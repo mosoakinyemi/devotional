@@ -169,6 +169,7 @@ constructor(props){
                                           message: `${item.content}`,
                                           conclusion: `${item.subcontent}`,
                                           prayer: `${item.prayer1}`,
+                                          id: `${item.id}`,
 
                                          });
                                       }}
@@ -187,6 +188,7 @@ constructor(props){
                                           message: `${item.content}`,
                                           conclusion: `${item.subcontent}`,
                                           prayer: `${item.prayer1}`,
+                                           id: `${item.id}`,
 
                                          });
                                       }}
