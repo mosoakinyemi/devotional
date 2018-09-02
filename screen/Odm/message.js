@@ -25,13 +25,18 @@ constructor(props) {
  
        const { goBack } = this.props.navigation;
     const { navigation } = this.props;
-    const id = navigation.getParam('id');
+    const id = navigation.getParam('id'); 
+    const day = navigation.getParam('day'); 
+    const month = navigation.getParam('month'); 
+    const year = navigation.getParam('year'); 
+  
+
      return (
       <View style={styles.container}>
                  
                      
 <WebView
-        source={{uri: 'http://ourdailydevotional.herokuapp.com/view/message/odm/'+id+'/english'}}
+        source={{uri: 'http://ourdailydevotional.herokuapp.com/view/message/odm/'+day+'/'+month+'/'+year+'/english'}}
         style={styles.body}
       />
                                 
