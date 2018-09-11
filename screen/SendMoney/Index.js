@@ -44,7 +44,7 @@ constructor(props) {
                               <Tab heading="Prayer points">
                                 <Tab2 />
                               </Tab>
-                              <Tab heading="Declerations">
+                              <Tab heading="Declarations">
                                 <Tab3 />
                               </Tab>
                               
