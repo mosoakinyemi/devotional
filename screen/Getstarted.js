@@ -38,7 +38,7 @@ export default class Signin extends Component {
                   < KeyboardAvoidingView behavior="position">
                   <Logo />
                           <Text style={styles.title}>Affecting Lives</Text>
-                          <Text style={styles.title}>Touching Generation</Text>
+                          <Text style={styles.title}>Touching Generations</Text>
                             
                          
                              <View style={styles.hold}>

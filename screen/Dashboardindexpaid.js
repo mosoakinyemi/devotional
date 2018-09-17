@@ -7,6 +7,7 @@ import { createTabNavigator } from "react-navigation";
 import {Text} from "react-native"
 import { Button, Icon, Footer, FooterTab } from "native-base";
 import Prayers from './SendMoney/Index';
+import About from './SendMoney/About';
 import Events from './Events/Index';
 import Referral from './Referral/Referral';
 import Issue from './Reportissue/Issue';
@@ -158,7 +159,8 @@ const HomeScreenRouter = createDrawerNavigator(
     Events: { screen: Events},
     Dashboard: { screen: MainScreenNavigator},
     Logout: { screen: Logout},
-   
+      About:{ screen: About},
+
     
   },
   {

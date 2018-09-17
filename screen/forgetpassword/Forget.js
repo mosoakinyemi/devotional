@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  View,Text, StyleSheet,Image,ImageBackground,TouchableHighlight,TouchableOpacity  } from 'react-native';
+import {  Alert,View,Text, StyleSheet,Image,ImageBackground,TouchableHighlight,TouchableOpacity,ActivityIndicator  } from 'react-native';
 import { Container, Header, Content, Item, Input, Icon, Form, Label } from 'native-base';
 
 import Buttoncorrect from '../components/Buttoncorrectwhite';
@@ -8,11 +8,51 @@ import Buttoncorrect from '../components/Buttoncorrectwhite';
 export default class Forget extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      mobile: '',
+      isLoading: false,
+    }
   }
+
+  _registerin(mobile) {
+      // this.props.navigation.navigate('Dashboardindexpaid');
+       this.setState({
+                  
+                          isLoading: true,
+                        
+                        }); 
+       fetch('https://ourdailydevotional.herokuapp.com/bulksms/'+mobile)
+        .then((response) => response.json())
+        .then((responseJson) => {
+  
+     
+           if(responseJson == '1'){
+             this.setState({isLoading: false,});
+             Alert.alert('success!', 'your password has been sent to the your mobile phone.')             
+           }
+      
+           if(responseJson == '0'){
+              this.setState({isLoading: false,});
+             Alert.alert('Error!', 'No account is associated with this number.')             
+         
+           }
+        });
+    
+  
+ 
+  }
+
   
 
   render() {
-    const { goBack } = this.props.navigation;  
+    const { goBack } = this.props.navigation; 
+        if(this.state.isLoading){
+      return(
+        <View style={{flex: 1, padding: 20,justifyContent:'center',alignContent:'center'}}>
+          <ActivityIndicator/>
+         </View>
+      )
+    } 
     return (
       <View style={styles.container}>
       
@@ -26,14 +66,15 @@ export default class Forget extends Component {
                          Forget Password
                     </Text>
                     <Text  style={styles.titlesub}>
-                       Enter the email associated with your account
+                       Enter the Mobile number associated with your account
                     </Text>
 
                     <Content>
                         <Form>
                             <Item floatingLabel last style={styles.inputorange}>
-                                  <Label style={styles.white}>Email </Label>
-                                  <Input style={styles.inputorange} />
+                                  <Label style={styles.white}>Mobile </Label>
+                                  <Input style={styles.inputorange} 
+                                  onChangeText={(text) => this.setState({mobile:text})}/>
                             </Item>
                             <View style={styles.hold}>
                                   <View style={styles.inner}>
@@ -46,7 +87,7 @@ export default class Forget extends Component {
                                    </View>
                                   <View style={styles.inner1}>
                                         <TouchableOpacity style={styles.checkbox}
-                                         onPress={() => this.props.navigation.navigate('Resetpassword')}>
+                                          onPress={() => this._registerin(this.state.mobile)}>
                                          
                                          <Buttoncorrect/>
                                         </TouchableOpacity>

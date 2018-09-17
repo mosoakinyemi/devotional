@@ -32,10 +32,13 @@
       "com.sec.android.provider.badge.permission.WRITE",
       "com.sonyericsson.home.permission.BROADCAST_BADGE"
     ],
-    "versionCode": 2,
+    "versionCode": 4,
     },
     "splash": {
-        "image": "screen/assets/bgcove.png"
+        "image": "screen/assets/bgcove.png",
+        "resizeMode": "cover",
+         "backgroundColor": "#FA768F"
+
      },
 
    }

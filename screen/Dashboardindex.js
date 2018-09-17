@@ -11,6 +11,7 @@ import Events from './Events/Index';
 import Referral from './Referral/Referral';
 import Issue from './Reportissue/Issue';
 import Logout from './Signin';
+import About from './SendMoney/About';
 
 
  MainScreenNavigator = createTabNavigator(
@@ -64,7 +65,7 @@ const HomeScreenRouter = createDrawerNavigator(
     Events: { screen: Events},
     Dashboard: { screen: MainScreenNavigator},
     Logout: { screen: Logout},
-   
+   About:{ screen: About},
     
   },
   {
